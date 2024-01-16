@@ -3,9 +3,9 @@ function solution(progresses, speeds) {
     
     let firstDay = Math.ceil((100 - progresses[0]) / speeds[0]);
     let wait = [];
-    wait.push(firstDay);
-    progresses.shift();
-    speeds.shift();
+    // wait.push(firstDay);
+    // progresses.shift();
+    // speeds.shift();
     
     while(progresses[0]){
         if(100 <= progresses[0] + firstDay * speeds[0]){
