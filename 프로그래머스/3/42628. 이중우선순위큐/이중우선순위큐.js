@@ -10,30 +10,31 @@ function solution(operations) {
         }
         else if(arr[0] === "D" && heap[0]){
              if(num < 0){
-                 let min = heap.reduce((a, b) => {
-                     return Math.min(a, b);
-                 });
-                 let index = heap.indexOf(min)
+                 let index = heap.indexOf(getMin(heap),)
                  heap.splice(index, 1);
              }else{
-                 let max = heap.reduce((a, b) => {
-                     return Math.max(a, b);
-                 });
-                 let index = heap.indexOf(max)
+                 let index = heap.indexOf(getMax(heap),)
                  heap.splice(index, 1);
              }
         }
     }
     if(!heap[0])
         answer.push(0, 0);
-    if(heap.length > 1){
-    let max = heap.reduce((a, b) => {
-        return Math.max(a, b);
-    });
-    let min = heap.reduce((a, b) => {
-        return Math.min(a, b);
-    });
+    if(heap.length > 1)
+        answer.push(getMax(heap), getMin(heap));
     
-    answer.push(max, min);}
     return answer;
+    
+    function getMax(heap){
+        let max = heap.reduce((a, b) => {
+            return Math.max(a, b);
+        });
+        return max;
+    }
+       function getMin(heap){
+        let min = heap.reduce((a, b) => {
+            return Math.min(a, b);
+        });
+           return min;
+    }
 }
