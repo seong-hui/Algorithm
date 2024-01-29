@@ -1,9 +1,16 @@
 function solution(n)
 {
-    var ans = 0;
-
-    // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
-    console.log('Hello Javascript')
-
-    return ans;
+    var ans = 1;
+    let cur = n;
+    
+    while(cur !== 1){
+       if(cur % 2 === 1){
+           ans++
+           cur--;
+       }
+        else
+            cur = cur / 2;
+    }
+    
+    return ans
 }
