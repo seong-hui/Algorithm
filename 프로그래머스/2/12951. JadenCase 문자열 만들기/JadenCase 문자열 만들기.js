@@ -18,11 +18,3 @@ function solution(s) {
     }
     return answer.join("");
 }
-
-function isUpper(c){
-    return c >='A' && c <= 'Z';
-}
-
-function isLower(c){
-    return c >='a' && c <= 'z';
-}
