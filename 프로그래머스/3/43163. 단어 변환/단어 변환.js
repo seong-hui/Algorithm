@@ -3,16 +3,18 @@ function solution(begin, target, words) {
         return 0;
     
     const queue = [[begin, 0]];
-    const visited = new Set();
+    // const visited = new Set();
+    const visited = [];
+    
     
     while(queue.length){
         const [currentWord, transCnt] = queue.shift();
         if(currentWord === target)
             return transCnt;
         words.forEach((word)=>{
-            if(!visited.has(word) && isOneLetterDiff(currentWord, word)){
+            if(!visited.includes(word) && isOneLetterDiff(currentWord, word)){
                 queue.push([word, transCnt+1]);
-                visited.add(word);
+                visited.push(word);
             }
         });
     }
